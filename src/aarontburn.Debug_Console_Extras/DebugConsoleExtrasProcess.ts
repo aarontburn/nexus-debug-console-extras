@@ -1,29 +1,29 @@
 import { Process, IPCCallback, Setting } from "@nexus/nexus-module-builder"
+import { getCommands } from "./Commands";
 
 
-export class SampleModuleProcess extends Process {
+export class DebugConsoleExtras extends Process {
 
-    private static readonly MODULE_NAME: string = "Sample Module";
-    private static readonly MODULE_ID: string = "developer.Sample_Module";
+    private static readonly MODULE_NAME: string = "Debug Console Extras";
+    private static readonly MODULE_ID: string = "aarontburn.Debug_Console_Extras";
 
-    /**
-     *  The constructor. Should not directly be called, 
-     *      and should not contain logic relevant to the renderer.
-     */
     public constructor(ipcCallback: IPCCallback) {
         super(
-            SampleModuleProcess.MODULE_ID,
-            SampleModuleProcess.MODULE_NAME,
+            DebugConsoleExtras.MODULE_ID,
+            DebugConsoleExtras.MODULE_NAME,
             undefined,
             ipcCallback);
 
     }
 
-    /**
-     *  The entry point of the module.
-     */
+
     public initialize(): void {
         super.initialize(); // This should be called.
+
+        for (const command of getCommands(this)) {
+            this.requestExternal("aarontburn.Debug_Console", "addCommandPrefix", command); 
+        }
+
     }
 
 

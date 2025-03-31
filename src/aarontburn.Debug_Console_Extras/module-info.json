@@ -1,0 +1,9 @@
+{
+    "module_name": "Debug Console Extras",
+    "author": "aarontburn",
+    "version": "1.0.0",
+    "description": "A module to add commands to the Debug Console.",
+    "build_version": 3,
+    "platforms": [],
+    "link": "https://github.com/aarontburn/nexus-debug-console-extras"
+}

@@ -1,9 +1,0 @@
-{
-    "module_name": "Nexus Template: Internal",
-    "author": "aarontburn",
-    "version": "1.0.0",
-    "description": "A developer template to create a internal, no-gui module for Nexus.",
-    "build_version": 1,
-    "platforms": [],
-    "link": "https://github.com/aarontburn/nexus-template-internal"
-}
