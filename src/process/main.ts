@@ -2,15 +2,16 @@ import { Process, IPCCallback, Setting } from "@nexus/nexus-module-builder"
 import { getCommands } from "./Commands";
 
 
-export default class DebugConsoleExtras extends Process {
+const MODULE_NAME: string = "{EXPORTED_MODULE_NAME}";
+const MODULE_ID: string = "{EXPORTED_MODULE_ID}";
 
-    private static readonly MODULE_NAME: string = "Debug Console Extras";
-    private static readonly MODULE_ID: string = "aarontburn.Debug_Console_Extras";
+
+export default class DebugConsoleExtras extends Process {
 
     public constructor(ipcCallback: IPCCallback) {
         super(
-            DebugConsoleExtras.MODULE_ID,
-            DebugConsoleExtras.MODULE_NAME,
+            MODULE_ID,
+            MODULE_NAME,
             undefined,
             ipcCallback);
 
