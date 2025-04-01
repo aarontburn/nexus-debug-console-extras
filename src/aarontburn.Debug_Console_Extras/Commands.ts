@@ -1,5 +1,5 @@
 import { BrowserWindow } from "electron";
-import { DebugConsoleExtras } from "./DebugConsoleExtrasProcess";
+import DebugConsoleExtras from "./DebugConsoleExtrasProcess";
 import { repoCommand } from "./commands/repo";
 import { moduleInfoCommand } from "./commands/module-info";
 

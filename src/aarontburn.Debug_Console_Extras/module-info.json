@@ -3,7 +3,7 @@
     "author": "aarontburn",
     "version": "1.0.0",
     "description": "A module to add commands to the Debug Console.",
-    "build_version": 3,
+    "build_version": 6,
     "platforms": [],
     "link": "https://github.com/aarontburn/nexus-debug-console-extras"
 }

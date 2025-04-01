@@ -1,6 +1,6 @@
 import { StorageHandler } from "@nexus/nexus-module-builder";
 import { Command } from "../Commands";
-import { DebugConsoleExtras } from "../DebugConsoleExtrasProcess";
+import DebugConsoleExtras from "../DebugConsoleExtrasProcess";
 import * as path from "path";
 import * as fs from "fs";
 import { shell } from "electron";

@@ -2,7 +2,7 @@ import { Process, IPCCallback, Setting } from "@nexus/nexus-module-builder"
 import { getCommands } from "./Commands";
 
 
-export class DebugConsoleExtras extends Process {
+export default class DebugConsoleExtras extends Process {
 
     private static readonly MODULE_NAME: string = "Debug Console Extras";
     private static readonly MODULE_ID: string = "aarontburn.Debug_Console_Extras";
