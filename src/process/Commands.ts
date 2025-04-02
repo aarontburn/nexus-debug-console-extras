@@ -15,7 +15,7 @@ export interface Command {
     }
 }
 
-export function getCommands(process: DebugConsoleExtras): Command[] {
+export function getCommands(p: DebugConsoleExtras): Command[] {
     return [
         {
             prefix: "devtools",
@@ -26,9 +26,18 @@ export function getCommands(process: DebugConsoleExtras): Command[] {
             documentation: {
                 shortDescription: "Opens the web inspector."
             }
+        }, 
+        {
+            prefix: "argv",
+            executeCommand: function (args: string[]): void {
+                console.info(process.argv + "\n");
+            },
+            documentation: {
+                shortDescription: "Lists all command-line arguments."
+            }
         },
-        repoCommand(process),
-        moduleInfoCommand(process),
+        repoCommand(p),
+        moduleInfoCommand(p),
 
 
     ]
