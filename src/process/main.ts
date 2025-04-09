@@ -1,4 +1,4 @@
-import { Process, Setting } from "@nexus/nexus-module-builder"
+import { DataResponse, HTTPStatusCode, Process, Setting } from "@nexus/nexus-module-builder"
 import { getCommands } from "./Commands";
 
 const MODULE_ID: string = "{EXPORTED_MODULE_ID}";
@@ -15,8 +15,15 @@ export default class DebugConsoleExtras extends Process {
     public initialize(): void {
         super.initialize(); // This should be called.
 
+        this.registerCommands();
+    }
+
+    private async registerCommands() {
         for (const command of getCommands(this)) {
-            this.requestExternal("aarontburn.Debug_Console", "addCommandPrefix", command);
+            const response: DataResponse = await this.requestExternal("aarontburn.Debug_Console", "addCommandPrefix", command);
+            if (response.code !== HTTPStatusCode.OK) {
+                console.error(response.body);
+            }
         }
 
     }

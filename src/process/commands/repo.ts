@@ -52,7 +52,7 @@ export async function executeCommand(process: DebugConsoleExtras, args: string[]
     }
 
 
-    const installedModuleIDs: string[] = (await process.requestExternal("built_ins.Main", "get-module-IDs")) as string[];
+    const installedModuleIDs: string[] = (await process.requestExternal("built_ins.Main", "get-module-IDs")).body as string[];
 
     if (!installedModuleIDs.includes(moduleID)) {
         console.error(
