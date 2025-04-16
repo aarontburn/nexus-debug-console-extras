@@ -8,7 +8,10 @@ const MODULE_NAME: string = "{EXPORTED_MODULE_NAME}";
 export default class DebugConsoleExtras extends Process {
 
     public constructor() {
-        super(MODULE_ID, MODULE_NAME, undefined);
+		super({
+			moduleID: MODULE_ID,
+			moduleName: MODULE_NAME,
+		});
     }
 
 

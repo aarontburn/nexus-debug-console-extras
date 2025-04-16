@@ -1,4 +1,4 @@
-import { BrowserWindow } from "electron";
+import { BaseWindow, BrowserWindow, WebContentsView } from "electron";
 import DebugConsoleExtras from "./main";
 import { repoCommand } from "./commands/repo";
 import { moduleInfoCommand } from "./commands/module-info";
@@ -17,30 +17,7 @@ export interface Command {
 
 export function getCommands(p: DebugConsoleExtras): Command[] {
     return [
-        {
-            prefix: "devtools",
-            executeCommand: function (args: string[]): void {
-                if (args.includes("--detached")) {
-                    BrowserWindow.getFocusedWindow()?.webContents.openDevTools({ mode: "detach" });
-                } else {
-                    BrowserWindow.getFocusedWindow()?.webContents.openDevTools();
-                }
 
-                console.info("Opening devtools.\n")
-            },
-            documentation: {
-                shortDescription: "Opens the web inspector."
-            }
-        },
-        {
-            prefix: "argv",
-            executeCommand: function (args: string[]): void {
-                console.info(JSON.stringify(process.argv, undefined, 4) + "\n");
-            },
-            documentation: {
-                shortDescription: "Lists all command-line arguments."
-            }
-        },
         repoCommand(p),
         moduleInfoCommand(p),
 

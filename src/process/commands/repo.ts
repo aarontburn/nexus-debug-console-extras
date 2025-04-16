@@ -29,9 +29,9 @@ Usage: repo <moduleID> [--open]
 
 
 const redirectToMainPage: string[] = [
-    'built_ins.Home',
-    'built_ins.Settings',
-    'built_ins.Main'
+    'nexus.Home',
+    'nexus.Settings',
+    'nexus.Main'
 ]
 
 export async function executeCommand(process: DebugConsoleExtras, args: string[]): Promise<void> {
@@ -52,12 +52,12 @@ export async function executeCommand(process: DebugConsoleExtras, args: string[]
     }
 
 
-    const installedModuleIDs: string[] = (await process.requestExternal("built_ins.Main", "get-module-IDs")).body as string[];
+    const installedModuleIDs: string[] = (await process.requestExternal("nexus.Main", "get-module-IDs")).body as string[];
 
     if (!installedModuleIDs.includes(moduleID)) {
         console.error(
             `Could not find module with an ID of '${moduleID}'\n` +
-            `Use the command 'built_ins.Main.installed-modules' for a list of all installed modules.\n`
+            `Use the command 'nexus.Main.installed-modules' for a list of all installed modules.\n`
         );
 
         return;
