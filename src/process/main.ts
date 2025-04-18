@@ -8,15 +8,15 @@ const MODULE_NAME: string = "{EXPORTED_MODULE_NAME}";
 export default class DebugConsoleExtras extends Process {
 
     public constructor() {
-		super({
-			moduleID: MODULE_ID,
-			moduleName: MODULE_NAME,
-		});
+        super({
+            moduleID: MODULE_ID,
+            moduleName: MODULE_NAME,
+        });
     }
 
 
-    public initialize(): void {
-        super.initialize(); // This should be called.
+    public async initialize(): Promise<void> {
+        await super.initialize(); // This should be called.
 
         this.registerCommands();
     }
@@ -37,7 +37,7 @@ export default class DebugConsoleExtras extends Process {
     }
 
 
-    public refreshSettings(modifiedSetting: Setting<unknown>): void {
+    public async onSettingModified(modifiedSetting: Setting<unknown>): Promise<void> {
 
     }
 
