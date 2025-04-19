@@ -1,9 +1,10 @@
-import { StorageHandler } from "@nexus/nexus-module-builder";
 import { Command } from "../Commands";
 import DebugConsoleExtras from "../main";
 import * as path from "path";
 import * as fs from "fs";
 import { shell } from "electron";
+import { DIRECTORIES } from "@nexus/nexus-module-builder";
+
 
 
 export const repoCommand = (process: DebugConsoleExtras): Command => {
@@ -63,7 +64,7 @@ export async function executeCommand(process: DebugConsoleExtras, args: string[]
         return;
     }
 
-    const moduleInfoPath: string = path.join(StorageHandler.COMPILED_MODULES_PATH, moduleID, "module-info.json");
+    const moduleInfoPath: string = path.join(DIRECTORIES.COMPILED_MODULES_PATH, moduleID, "module-info.json");
     if (!(await checkFileExists(moduleInfoPath))) {
         console.error(`Could not find path: ${moduleInfoPath}\n`);
         return;

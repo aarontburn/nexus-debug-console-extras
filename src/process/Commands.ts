@@ -1,4 +1,4 @@
-import { BaseWindow, BrowserWindow, session, WebContentsView } from "electron";
+import { session } from "electron";
 import DebugConsoleExtras from "./main";
 import { repoCommand } from "./commands/repo";
 import { moduleInfoCommand } from "./commands/module-info";
