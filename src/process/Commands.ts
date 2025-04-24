@@ -1,4 +1,3 @@
-import { session } from "electron";
 import DebugConsoleExtras from "./main";
 import { repoCommand } from "./commands/repo";
 import { moduleInfoCommand } from "./commands/module-info";
@@ -17,16 +16,7 @@ export interface Command {
 
 export function getCommands(p: DebugConsoleExtras): Command[] {
     return [
-        {
-            prefix: "user-agent",
-            executeCommand: function (args: string[]): void {
-                console.info(session.defaultSession.getUserAgent())
-            }
-        },
-
         repoCommand(p),
         moduleInfoCommand(p),
-
-
     ]
 }
