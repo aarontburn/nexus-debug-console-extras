@@ -3,7 +3,7 @@ import DebugConsoleExtras from "../main";
 import * as path from "path";
 import * as fs from "fs";
 import { shell } from "electron";
-import { DIRECTORIES } from "@nexus/nexus-module-builder";
+import { DIRECTORIES } from "@nexus-app/nexus-module-builder";
 
 
 

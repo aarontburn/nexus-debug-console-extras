@@ -1,4 +1,4 @@
-import { DIRECTORIES } from "@nexus/nexus-module-builder";
+import { DIRECTORIES } from "@nexus-app/nexus-module-builder";
 import { Command, indent } from "../Commands";
 import DebugConsoleExtras from "../main";
 import * as path from "path";

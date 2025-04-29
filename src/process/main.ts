@@ -1,4 +1,4 @@
-import { DataResponse, HTTPStatusCodes, Process, Setting } from "@nexus/nexus-module-builder"
+import { DataResponse, HTTPStatusCodes, Process, Setting } from "@nexus-app/nexus-module-builder"
 import { getCommands } from "./Commands";
 
 const MODULE_ID: string = "{EXPORTED_MODULE_ID}";
