@@ -1,9 +1,25 @@
 {
-    "name": "{EXPORTED_MODULE_NAME}",
-    "author": "aarontburn",
+    "name": "Debug Console Extras",
+    "id": "aarontburn.Debug_Console_Extras",
     "version": "1.0.0",
+    "author": "aarontburn",
     "description": "A module to add commands to the Debug Console.",
-    "build_version": 6,
+    "link": "https://github.com/aarontburn/nexus-debug-console-extras",
+    "build-version": 6,
     "platforms": [],
-    "link": "https://github.com/aarontburn/nexus-debug-console-extras"
+    "build" : {
+        "process": "./process/main.js",
+        "replace": [
+            {
+                "from": "{EXPORTED_MODULE_ID}",
+                "to": "%id%",
+                "at": ["./process/main.ts"]
+            },
+            {
+                "from": "{EXPORTED_MODULE_NAME}",
+                "to": "%name%",
+                "at": ["./process/main.ts"]
+            }
+        ]
+    }
 }
